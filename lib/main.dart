@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_localization/router/custom_router.dart';
 import 'package:simple_localization/router/route_constants.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,17 +27,9 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en'), // English
-        Locale('fa'), // Farsi
-        Locale('ar'), // Arabic
-      ],
-      locale: const Locale('ar', ''),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('en', ''),
       // TODO: implement localizations
       onGenerateRoute: CustomRouter.generatedRoute,
       initialRoute: homeRoute,

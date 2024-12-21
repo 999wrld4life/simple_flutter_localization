@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simple_localization/classes/language.dart';
 import 'package:simple_localization/router/route_constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 // TODO: Need to import language constants
 
 class HomePage extends StatefulWidget {
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        title: Text(AppLocalizations.of(context)!.homePage),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -75,11 +77,11 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height / 4,
-            child: const Center(
+            child: Center(
               child: Text(
-                "Personal Information",
+                AppLocalizations.of(context)!.personalInformation,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
