@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_localization/classes/language.constants.dart';
 import 'package:simple_localization/router/custom_router.dart';
 import 'package:simple_localization/router/route_constants.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,13 +21,19 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // TODO: define local and setLocale and on didChangedependies initilas
-
   Locale? _locale;
   setLocale(Locale locale) {
     setState(() {
       _locale = locale;
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    getLocale().then(
+      (locale) => setLocale(locale),
+    );
+    super.didChangeDependencies();
   }
 
   @override
