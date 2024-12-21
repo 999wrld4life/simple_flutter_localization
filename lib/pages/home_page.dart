@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               underline: const SizedBox(),
               icon: const Icon(
                 Icons.language,
-                color: Colors.white,
+                color: Colors.black,
               ),
               onChanged: (Language? language) {
                 // TODO: to call change language method
