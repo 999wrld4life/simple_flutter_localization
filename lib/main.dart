@@ -13,11 +13,21 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 
-  //TODO: implement setLocale
+  static void setLocale(BuildContext context, Locale locale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(locale);
+  }
 }
 
 class _MyAppState extends State<MyApp> {
   // TODO: define local and setLocale and on didChangedependies initilas
+
+  Locale? _locale;
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +39,7 @@ class _MyAppState extends State<MyApp> {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: const Locale('en', ''),
-      // TODO: implement localizations
+      locale: _locale,
       onGenerateRoute: CustomRouter.generatedRoute,
       initialRoute: homeRoute,
     );
