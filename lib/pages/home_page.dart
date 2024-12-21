@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_localization/classes/language.constants.dart';
 import 'package:simple_localization/classes/language.dart';
 import 'package:simple_localization/main.dart';
 import 'package:simple_localization/router/route_constants.dart';
@@ -37,12 +38,12 @@ class _HomePageState extends State<HomePage> {
                 Icons.language,
                 color: Colors.black,
               ),
-              onChanged: (Language? language) {
+              onChanged: (Language? language) async {
                 if (language != null) {
-                  MyApp.setLocale(
-                    context,
-                    Locale(language.languageCode, ''),
-                  );
+                  // ignore: no_leading_underscores_for_local_identifiers
+                  Locale _locale = await setLocale(language.languageCode);
+                  // ignore: use_build_context_synchronously
+                  MyApp.setLocale(context, _locale);
                 }
               },
               items: Language.languageList()
