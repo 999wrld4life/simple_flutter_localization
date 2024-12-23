@@ -11,6 +11,7 @@ class Language {
       Language(1, "🇦🇫", "فارسی", "fa"),
       Language(2, "🇺🇸", "English", "en"),
       Language(3, "🇸🇦", "اَلْعَرَبِيَّةُ", "ar"),
+      Language(3, "🇪🇹", "አማርኛ", "am"),
       //TODO : add Hindi language
     ];
   }
