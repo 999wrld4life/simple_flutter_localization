@@ -11,8 +11,9 @@ class Language {
       Language(1, "🇦🇫", "فارسی", "fa"),
       Language(2, "🇺🇸", "English", "en"),
       Language(3, "🇸🇦", "اَلْعَرَبِيَّةُ", "ar"),
-      Language(3, "🇪🇹", "አማርኛ", "am"),
-      //TODO : add Hindi language
+      Language(4, "🇪🇹", "አማርኛ", "am"),
+      // Language(3, "🇷🇺", "русский", "ru"),
+      //TODO : add Russian language
     ];
   }
 }
